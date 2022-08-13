@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AirBnB</title>
+
+  <!-- Bootstrap v. 5 stylesheet -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- D3 js -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <!-- Leaflet css - might not need to be in 'index.html' file if we have separate web page for leaflet map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin="" />
+  <!--CSS Sheet-->
+  <link rel="stylesheet" href="styles.css">
+
+<body>
+  <section>
+
+<!-- Nav Bar
+================================================================================= -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Airbnb</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Methodology</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#try">Try It!</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Our Data</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</head>
+
+<!-- Hero carousel
+================================================================================= -->
+
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+<div class="carousel-indicators">
+  <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
+  <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
+  <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+</div>
+<div class="carousel-inner">
+  <div class="carousel-item active">
+    <img class="img-fluid carousel-image" width="100%" height=20px src="https://images.unsplash.com/photo-1522083165195-3424ed129620?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8N3x8fGVufDB8fHx8&w=1000&q=80
+" preserveAspectRatio="xMidYMid slice" focusable="false"</img>
+  </div>
+  <div class="carousel-item">
+    <img class="img-fluid carousel-image" width="100%" height=20px src="https://cdn.wallpapersafari.com/10/34/IylFwS.jpg" preserveAspectRatio="xMidYMid slice" focusable="false"</img>
+
+    <div class="container">
+      <div class="carousel-caption text-start">
+        <h1>Interested about your property?</h1>
+        <p><a class="btn btn-lg btn-primary text-start" href="#try">Try it now!</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="carousel-item">
+  <img class="img-fluid carousel-image" width="100%" src="https://cdn.propertyinvestmentproject.co.uk/wp-content/uploads/airbnb-banner.jpg" preserveAspectRatio="xMidYMid slice" focusable="false" </img>
+    <div class="container">
+      <div class="carousel-caption text-end">
+        <p><a class="btn btn-lg btn-primary" href="http://insideairbnb.com/get-the-data/">Data Source</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  <span class="visually-hidden">Previous</span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  <span class="visually-hidden">Next</span>
+</button>
+</div>
+
+
+
+<!-- Meet the Team
+================================================== -->
+
+<section>
+<div class="container">
+  <div class="">
+    <h1>The Team</h1>
+  </div>
+<div class="row">
+  <div class="col text-center">
+    <img class="profile" src="https://media-exp1.licdn.com/dms/image/C4E03AQGPwlLuW3jBYA/profile-displayphoto-shrink_800_800/0/1600700362876?e=1665619200&v=beta&t=uy3eQeruJzPdsxPOXkTirgdTO5UsXCBLV9gdH4iy3IQ" alt="">
+      <h2>Ellen Grove</h2>
+      <p><a class="btn btn-secondary" href="https://www.linkedin.com/in/ellenegrove/">Linkedin</a></p>
+    </div>
+  <div class="col text-center">
+    <img class="profile" src="https://media-exp1.licdn.com/dms/image/C4E03AQGSyX-RzAuCLg/profile-displayphoto-shrink_800_800/0/1611640274159?e=1665619200&v=beta&t=IkkMcZdVajjYSqKH1GdSqilNlJLWRM6GF4_Twm3V6ZM" alt="">
+      <h2>Joshua Yesufu</h2>
+      <p><a class="btn btn-secondary" href="https://www.linkedin.com/in/joshua-yesufu-9182ab202/">Linkedin</a></p></div>
+  <div class="col text-center">
+    <img class="profile" src="https://media-exp1.licdn.com/dms/image/C5603AQHoyJ0h9mAImA/profile-displayphoto-shrink_800_800/0/1658201345482?e=1665619200&v=beta&t=Fo6CDftXc4ztMESkkiYNNCSoFvwFOdBwz24lt7xWUk4" alt="">
+    <h2>Zach Meader</h2>
+    <p><a class="btn btn-secondary" href="https://www.linkedin.com/in/zachary-meader-668674135/">Linkedin</a></p>
+  </div>
+  <div class="col text-center">
+    <img class="profile" src="https://media-exp1.licdn.com/dms/image/C4E03AQFNTaSYXC9ngw/profile-displayphoto-shrink_800_800/0/1563324464984?e=1665619200&v=beta&t=Pxw_FX5YfWW3VCtO2F3QxjhZe-1NBhkla0Fi-Uw7Iso" alt="">
+    <h2>Anne Pizzini</h2>
+    <p><a class="btn btn-secondary align-middle" href="https://www.linkedin.com/in/annepizzini/">Linkedin</a></p>
+  </div>
+</div>
+</div>
+</section>
+
+
+<!-- About the Project
+================================================== -->
+<section id="about">
+
+<div class="container">
+  <div class="row text-center">
+    <h1>About the Project</h1>
+    <p>Using Machine Learning to Predict Rental Pricing</p>
+
+  </div>
+
+</div>
+
+
+
+</section>
+
+
+
+<!-- Methodology
+================================================== -->
+<section id="method">
+  <div class="container">
+    <div class="row text-center">
+      <h1>Our Methodology</h1>
+    </div>
+    <div class="clearfix">
+  <img src="images/website.png" class="col-md-6 float-md-end mb-3 ms-md-3" alt="...">
+
+  <p>
+    Add Info Here
+  </p>
+
+  <p>
+    Add Info Here
+  </p>
+
+  <p>
+    Add Info Here
+  </p>
+</div>
+</section>
+
+<!-- Try it!
+================================================== -->
+<section id="try">
+  <div class="container tryIt">
+    <div class="row text-center">
+      <h1>Try it!</h1>
+      <!-- Buttons-->
+      <div class="container">
+  <div class="row">
+    <div class="col order-last">
+      <div class="btn-group">
+    <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Boroughs
+    </button>
+    <ul class="dropdown-menu">
+      <li>Bronx</li>
+      <li>Brooklyn</li>
+      <li>Manhattan</li>
+      <li>Queens</li>
+      <li>Staten Island</li>
+    </ul>
+  </div>
+    </div>
+    <div class="col">
+      <div class="btn-group">
+    <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Review Count
+    </button>
+    <ul class="dropdown-menu">
+    </ul>
+  </div>    </div>
+    <div class="col order-first">
+      <div class="btn-group">
+    <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Bed Rooms
+    </button>
+    <ul class="dropdown-menu">
+    </ul>
+  </div>
+  </div>
+  <div class="col order-first">
+    <div class="btn-group">
+  <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Room Type
+  </button>
+  <ul class="dropdown-menu">
+    <li>Entire home/apt</li>
+      <li>Hotel room</li>
+        <li>Private room</li>
+          <li>Shared room</li>
+  </ul>
+</div>
+</div>
+<div class="col order-first">
+  <div class="btn-group">
+<button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+  Accomodates
+</button>
+<ul class="dropdown-menu">
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+
+
+  <section >
+    <div class="container">
+      <div class="row text-center">
+
+        </div>
+</section>
+      <!-- Leaflet js -- might not need to be in 'index.html' file if we have separate web page for leaflet map -->
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+    <!-- Bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- apex charts -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <!-- Plotly -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- Our js -->
+    <script src="js.js"></script>
+
+    <script src="/docs/5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
