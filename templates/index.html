@@ -178,120 +178,188 @@
       <div class="container">
   <div class="row">
     <div class="col order-last">
-      <!-- Based on erins wt, we need to set up a form here with method = "Post" and action = "/send" -->
+    <form method="POST" action="/send" role = "form">
       <!-- We also need to add a div tag with the class="form-group" -->
-      <div class="btn-group">
-    <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-      Borough
-    <!-- We need to add an input tag, the name of the input must match the app.py for the connection -->
-    <!-- <ul class="dropdown-menu">
-      <li>Bronx</li>
-      <li>Brooklyn</li>
-      <li>Manhattan</li>
-      <li>Queens</li>
-      <li>Staten Island</li>
-    </ul> -->   
-      <select id="buroughs" class="form-control" name="buroughs">
-        <option value="Bronx">Bronx</option>
-        <option value="Brooklyn">Brooklyn</option>
-        <option value="manhattan">Manhattan</option>
-        <option value="queens">Queens</option>
-        <option value="Staten Island">Staten Island</option>
-      </select>
-    <!-- </label> -->
-  </button>
-  </div>
+          <div class="form-group">
+            <label>Borough</label>
+            <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <!-- Borough  -->
+              <select id="buroughs" class="form-control" name="buroughs" type="text">
+                <option value="Bronx">Bronx</option>
+                <option value="Brooklyn">Brooklyn</option>
+                <option value="manhattan">Manhattan</option>
+                <option value="queens">Queens</option>
+                <option value="Staten Island">Staten Island</option>
+              </select>
+          </button>
+          </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+            <button class="text" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Review Count
+              <select id="review_count_bin" class="form-control" name="review_count_bin" type="text">
+                <option value="none">No Reviews</option>
+                <option value="less_10">Less than 10</option>
+                <option value="10_50">Between 10 and 50</option>
+                <option value="50_200">Between 50 and 200</option>
+                <option value="200">200 or greater</option>
+              </select>
+            </button>
+            
+          </div>    </div>
+            <div class="col order-first">
+              <div class="form-group">
+            <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Bed Rooms
+              <select id="bedrooms" class="form-control" name="bedrooms" type="integer">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+            </button>
+          </div>
+          </div>
+          <div class="col order-first">
+            <div class="form-group">
+          <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Room Type
+              <select id="room_type" class="form-control" name="room_type" type="text">
+                <option value="entire">Entire home</option>
+                <option value="Hotel">Hotel room</option>
+                <option value="private">Private room</option>
+                <option value="shared">Shared room</option>
+              </select>
+          </button>
+        </div>
+        </div>
+          <div class="col order-first">
+            <div class="form-group">
+              <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Accomodates
+                  <select id = accommodates class = "form-control" name = "accommodates" type="integer">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                  </select>
+              </button>
+            </div>
+          </div>
+          <div class="col order-first">
+            <div class="form-group">
+              <button button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Instantly Bookable
+                <select id = instant class = "form-control" name = "instant" type="text">
+                  <option value="y">Yes</option>
+                  <option value="n">No</option>
+                </select>
+              </button>
+            </div>
+          </div>
+        </div>
+          <div class="row">
+          <div class="col order-first">
+              <div class="form-group">
+                <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Short Term?
+                  <select id = "short" class = "form-control" name = "short" type="text">
+                    <option value="y">Yes</option>
+                    <option value="n">No</option>
+                  </select>
+                </button>
+              </div>
+              <div class="form-group">
+                <div class="col">
+                  <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Cleanliness Score
+                    <select id = "cleanliness" class = "form-control" name = "cleanliness" type="float">
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                    </select>
+                  </button>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col">
+                  <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Location Score
+                    <select id = "location_score" class = "form-control" name = "location_score" type="float">
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                    </select>
+                  </button>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col">
+                  <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Review Score Value
+                    <select id = "review_score_valule" class = "form-control" name = "review_score_value" type="float">
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                    </select>
+                  </button>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col">
+                  <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Review Score Rating
+                    <select id = "review_score_rating" class = "form-control" name = "review_score_rating" type="float">
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                    </select>
+                  </button>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="accpetance_rate">Host Acceptance Rate (0-100)</label>
+                  <input type= "integer" class = "form-control" name = "aceptance_rate">
+                  </select>
+                </button>
+              </div>
+              <input type="submit" value="Submit!" class="button">
+        </form>
+        <p>{{result}}</p>
+      </div>
     </div>
-    <div class="col">
-      <div class="btn-group">
-    <button class="text" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-      Review Count
-      <select id="review_count_bin" class="form-control" name="review_count_bin">
-        <option value="none">No Reviews</option>
-        <option value="less_10">Less than 10</option>
-        <option value="10_50">Between 10 and 50</option>
-        <option value="50_200">Between 50 and 200</option>
-        <option value="200">200 or greater</option>
-      </select>
-    </button>
-    
-  </div>    </div>
-    <div class="col order-first">
-      <div class="btn-group">
-    <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-      Bed Rooms
-      <select id="bedrooms" class="form-control" name="bedrooms">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-      </select>
-    </button>
   </div>
-  </div>
-  <div class="col order-first">
-    <div class="btn-group">
-  <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Room Type
-  <!-- <ul class="dropdown-menu">
-    <li>Entire home/apt</li>
-      <li>Hotel room</li>
-        <li>Private room</li>
-          <li>Shared room</li>
-  </ul> -->
-      <select id="room_type" class="form-control" name="room_type">
-        <option value="entire">Entire home</option>
-        <option value="Hotel">Hotel room</option>
-        <option value="private">Private room</option>
-        <option value="shared">Shared room</option>
-      </select>
-  </button>
-</div>
-</div>
-  <div class="col order-first">
-    <div class="btn-group">
-      <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Accomodates
-          <select id = accommodates class = "form-control" name = "accommodates">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12</option>
-            <option value="13">13</option>
-            <option value="14">14</option>
-            <option value="15">15</option>
-            <option value="16">16</option>
-          </select>
-      </button>
-    </div>
-  </div>
-  <div class="col order-first">
-    <div class="btn-group">
-      <button button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Instantly Bookable
-        <select id = instant class = "form-control" name = "instant">
-          <option value="y">Yes</option>
-          <option value="n">No</option>
-        </select>
-      </button>
-    </div>
-  </div>
-</div>
-</div>
 </div>
 </section>
 

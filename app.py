@@ -1,4 +1,4 @@
-from pickle import load
+from joblib import load
 import numpy as np 
 from flask import Flask, render_template, request
 
@@ -12,7 +12,7 @@ app = Flask(__name__)
 # Load the Airbnb Model
 ################################################
 
-model = load(open('./models/_________________.pkl', 'rb'))
+model = load(open('./Models/_________________.joblib'))
 
 #create route that renders index template
 @app.route('/')
