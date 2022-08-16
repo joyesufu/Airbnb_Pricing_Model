@@ -12,16 +12,13 @@ app = Flask(__name__)
 # Load the Airbnb Model
 ################################################
 
-model = load(open('./Models/_________________.joblib'))
+model = load(open('./Models/random_forest_model_8.joblib', "rb"))
 
 #create route that renders index template
 @app.route('/')
 def main():
 
     ### Inputs via the model maybe?
-
-
-
 
     prediction_text = ""
 

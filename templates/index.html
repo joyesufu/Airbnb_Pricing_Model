@@ -178,20 +178,19 @@
       <div class="container">
   <div class="row">
     <div class="col order-last">
-    <form method="POST" action="/send" role = "form">
-      <!-- We also need to add a div tag with the class="form-group" -->
+      <form method="POST" action="/send" role="form">
           <div class="form-group">
             <label>Borough</label>
             <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <!-- Borough  -->
-              <select id="buroughs" class="form-control" name="buroughs" type="text">
+              Borough
+              <select id="buroughs" class="form-control" name="buroughs">
                 <option value="Bronx">Bronx</option>
                 <option value="Brooklyn">Brooklyn</option>
                 <option value="manhattan">Manhattan</option>
                 <option value="queens">Queens</option>
                 <option value="Staten Island">Staten Island</option>
               </select>
-          </button>
+            </button>
           </div>
             </div>
             <div class="col">
@@ -206,8 +205,8 @@
                 <option value="200">200 or greater</option>
               </select>
             </button>
-            
-          </div>    </div>
+            </div>    
+            </div>
             <div class="col order-first">
               <div class="form-group">
             <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -232,10 +231,10 @@
           <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Room Type
               <select id="room_type" class="form-control" name="room_type" type="text">
-                <option value="entire">Entire home</option>
-                <option value="Hotel">Hotel room</option>
-                <option value="private">Private room</option>
-                <option value="shared">Shared room</option>
+                <option value="Entire home">Entire home</option>
+                <option value="Hotel room">Hotel room</option>
+                <option value="private room">Private room</option>
+                <option value="Shared room">Shared room</option>
               </select>
           </button>
         </div>
@@ -355,8 +354,8 @@
                 </button>
               </div>
               <input type="submit" value="Submit!" class="button">
-        </form>
-        <p>{{result}}</p>
+      </form>
+      <p>{{result}}</p>
       </div>
     </div>
   </div>
