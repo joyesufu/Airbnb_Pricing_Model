@@ -1,0 +1,43 @@
+.profile {
+  width: 200px;
+   height: 200px;
+   border-radius: 50%;
+   overflow: hidden;
+   display:inline-block;
+   vertical-align:middle;
+}
+
+.carousel-image {
+    height: 500px;
+}
+
+
+#about {
+  background-color: #FF5A5F;
+
+}
+
+#try {
+  background-color: #FF5A5F;
+
+}
+
+.tryIt{
+  padding-bottom: 200px;
+}
+
+.form-group{
+  padding: 3px;
+}
+
+#model {
+padding-bottom: 100px;
+}
+
+#features {
+padding: 50px;
+}
+
+#about {
+  padding: 50px;
+}
