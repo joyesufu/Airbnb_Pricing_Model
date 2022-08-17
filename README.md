@@ -31,15 +31,15 @@ http://insideairbnb.com/get-the-data/
 <a name="outlier"></a>
 ### Outlier Removal
 
-After examining the data, we noticed that there was an extensive amount of outliers that affected that data, especially when it came to the average price of an Airbnb listing. These outliers were not included in the model because most of these price outliers are located in Manhattan, NY where Airbnb prices are significantly higher to the point only those in the top 3%-5% could afford it. Another noticeable outlier was the number of bedrooms for each Airbnb listing. Based on the graph below, the price of an Airbnb decreases significantly after to bedrooms, which we thought was odd. For instance, the price drops drastically for an 11 bedroom Airbnb, but skyrockets to a price that is unaffordable to most people. Due to the fact that almost all Airbnbs will not have that many rooms, we deemed it necessary not to include anything over 10 bedrooms in the model.
+After examining the data, we noticed that there was an extensive amount of outliers that affected that data, especially when it came to the average price of an Airbnb listing. These outliers were not included in the model because most of these price outliers are located in Manhattan, NY where Airbnb prices are significantly higher to the point only those in the top 3%-5% could afford it. Another noticeable outlier was the number of bedrooms for each Airbnb listing. Based on the graph below, the price of an Airbnb decreases significantly after to bedrooms, which we thought was odd. For instance, the price drops drastically for an 11 bedroom Airbnb, but then skyrockets when the number of bedrooms reaches 14. Due to the fact that almost all Airbnbs will not have that many rooms, we deemed it necessary not to include anything over 10 bedrooms in the model.
 
 
-Dataframe(from Jupyter Notebook)
+Dataframe(from Jupyter Notebook):
 
 ![dataframe](./images/Outlier_Removal.PNG)
 
 
-Average Price and Bedrooms Graph
+Average Price and Bedrooms Graph:
 
 ![bedrooms](./images/AveragePrice_and_Bedrooms.PNG)
 
@@ -48,6 +48,8 @@ Average Price and Bedrooms Graph
 
 <a name="airbnb_html"></a>
 ### Airbnb Home Page
+
+For the creation of the the web page we designed a layout that matched Airbnb's company colors, which was completed through bootstrap. Different tabs were created at the top left corner of the page to take viewers of the page directly to the location on the web page of the selected tab. Under this, there is little slideshow of pictures to add more professionalism, and beneath that are the pictures of the creators of this project. As a viewer works their way down the page they will see a brief description about the project along with the methodology, analysis, visuals, model, and features used. To give a viewer a more interactive experience at the very bottom of the page there is a section labeled "Try It", which allows the viewer to select certain features they would like for an Airbnb to have and after doing so a predictive price is generated based on the features choosen.
 
 <a name="scatter_plot"></a>
 ### Scatter Plot
