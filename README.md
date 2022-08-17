@@ -51,8 +51,22 @@ Average Price and Bedrooms Graph:
 
 For the creation of the the web page we designed a layout that matched Airbnb's company colors, which was completed through bootstrap. Different tabs were created at the top left corner of the page to take viewers of the page directly to the location on the web page of the selected tab. Under this, there is little slideshow of pictures to add more professionalism, and beneath that are the pictures of the creators of this project. As a viewer works their way down the page they will see a brief description about the project along with the methodology, analysis, visuals, model, and features used. To give a viewer a more interactive experience at the very bottom of the page there is a section labeled "Try It", which allows the viewer to select certain features they would like for an Airbnb to have and after doing so a predictive price is generated based on the features choosen.
 
+
+![web1](./images/Web_Page_1.PNG)
+
+
+![web2](./images/Web_Page_2.PNG)
+
+
+![web3](./images/Web_Page_3.PNG)
+
+
 <a name="scatter_plot"></a>
 ### Scatter Plot
+
+The scatter plot below displays the relationship between Airbnb prices and the number of reviews. Based on the plot, it could be assumed that the more expensive a property is listed for the less reviews it will have. A reason for this is that more expensive properties tend to price out the majority of the population because most people could not afford them, therefore there will be less reviews because only a small percentage of people can give a valid review. Another noticable feature of the plot is the color range which shows any reviews less than 20 as a light purple color and any reviews over 20 as a dark pink color.
+
+![scatter](./images/Scatter_Plot.PNG)
 
 <a name="box_plot"></a>
 ### Box Plot
