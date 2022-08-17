@@ -18,11 +18,11 @@ model = load(open('./Models/random_forest_model_8.joblib', "rb"))
 @app.route('/')
 def main():
 
-    ### Inputs via the model maybe?
+    inputs = {"clean": ""}
 
     prediction_text = ""
 
-    return render_template('index.html', result = prediction_text)
+    return render_template('index.html', result = prediction_text, form_inputs = inputs)
 
 @app.route("/send", methods=["POST"])
 def send():
@@ -41,6 +41,8 @@ def send():
     score = float(request.form["review_score_rating"])
     buroughs = request.form["buroughs"]
     room_type = request.form["room_type"]
+
+    inputs = {"clean": clean}
 
     if buroughs == "Bronx":
         encoded_burough = [1,0,0,0,0]
@@ -80,7 +82,7 @@ def send():
     prediction_text = f"The predicted price for your Airbnb listing is {round(prediction,0)} dollars"
 
     # send the prediction
-    return render_template("index.html", result = prediction_text)
+    return render_template("index.html", result = prediction_text, form_inputs = inputs)
 
 
 if __name__ == '__main__':
