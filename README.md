@@ -19,3 +19,32 @@ New York City Airbnb data compiled using Inside Airbnb from
 http://insideairbnb.com/get-the-data/
 
 ## Table of Contents:
+
+1. [ Outlier Removal. ](#outlier)
+2. [ Flask Application. ](#flask)
+3. [ Airbnb Home Page/HTML. ](#airbnb_html)
+4. [ Scatter Plot. ](#scatter_plot)
+5. [ Box Plot. ](#box_plot)
+6. [ Heat Map. ](#heat_map)
+7. [ Conclusion. ](#conc)
+
+<a name="outlier"></a>
+### Outlier Removal
+
+<a name="flask"></a>
+### Flask Application
+
+<a name="airbnb_html"></a>
+### Airbnb Home Page
+
+<a name="scatter_plot"></a>
+### Scatter Plot
+
+<a name="box_plot"></a>
+### Box Plot
+
+<a name="heat_map"></a>
+### Heat Map
+
+<a name="conc"></a>
+### Conclusion
