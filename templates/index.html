@@ -176,17 +176,16 @@
         <div class="row text-center">
           <h1>Try it!</h1>
           <!-- Buttons-->
-          <form>
-            <div class="form-group">
-                <form method="POST" action="/send" role="form">
+          <div class="form-group">
+            <form method="POST" action="/send" role="form" class = "form-group">
                   <div class="form-group row">
                     <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Borough
                       <select id="buroughs" class="form-control" name="buroughs">
                         <option value="Bronx">Bronx</option>
                         <option value="Brooklyn">Brooklyn</option>
-                        <option value="manhattan">Manhattan</option>
-                        <option value="queens">Queens</option>
+                        <option value="Manhattan">Manhattan</option>
+                        <option value="Queens">Queens</option>
                         <option value="Staten Island">Staten Island</option>
                       </select>
                     </button>
@@ -194,12 +193,12 @@
               <div class="form-group row">
                 <button class="text" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Review Count
-                  <select id="review_count_bin" class="form-control" name="review_count_bin" type="text">
-                    <option value="none">No Reviews</option>
-                    <option value="less_10">Less than 10</option>
-                    <option value="10_50">Between 10 and 50</option>
-                    <option value="50_200">Between 50 and 200</option>
-                    <option value="200">200 or greater</option>
+                  <select id="review_count_bin" class="form-control" name="reviews" type="text">
+                    <option value="No Reviews">No Reviews</option>
+                    <option value="Less than 10">Less than 10</option>
+                    <option value="Between 10 and 50">Between 10 and 50</option>
+                    <option value="Between 50 and 200">Between 50 and 200</option>
+                    <option value="200 or greater">200 or greater</option>
                   </select>
                 </button>
               </div>
@@ -226,7 +225,7 @@
                   <select id="room_type" class="form-control" name="room_type" type="text">
                     <option value="Entire home">Entire home</option>
                     <option value="Hotel room">Hotel room</option>
-                    <option value="private room">Private room</option>
+                    <option value="Private room">Private room</option>
                     <option value="Shared room">Shared room</option>
                   </select>
                 </button>
@@ -234,7 +233,7 @@
               <div class="form-group row">
                   <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Accomodates
-                    <select id=accommodates class="form-control" name="accommodates" type="integer">
+                    <select id=accomm class="form-control" name="accomm" type="integer">
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -259,8 +258,8 @@
                 <button button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Instantly Bookable
                   <select id=instant class="form-control" name="instant" type="text">
-                    <option value="y">Yes</option>
-                    <option value="n">No</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
                   </select>
                 </button>
               </div>
@@ -268,8 +267,8 @@
               <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Short Term?
                 <select id="short" class="form-control" name="short" type="text">
-                  <option value="y">Yes</option>
-                  <option value="n">No</option>
+                  <option value="1">Yes</option>
+                  <option value="0">No</option>
                 </select>
               </button>
             </div>
@@ -287,7 +286,7 @@
               </button>
             </div>
             <div class="form-group row">
-              <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <!-- <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Location Score
                 <select id="location_score" class="form-control" name="location_score" type="float">
                   <option value="0">0</option>
@@ -297,7 +296,7 @@
                   <option value="4">4</option>
                   <option value="5">5</option>
                 </select>
-              </button>
+              </button> -->
             </div>
             <div class="form-group row">
               <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -326,7 +325,6 @@
               </button>
             </div>
             <input type="submit" value="Submit!" class="button">
-
           </form>
           <p>{{result}}</p>
 
