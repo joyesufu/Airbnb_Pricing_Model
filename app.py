@@ -27,15 +27,50 @@ def main():
 @app.route("/send", methods=["POST"])
 def send():
 
-    ## obtain form inputs from the dataframe for running the model
-    # object of model = request.form["name_of_feature"]
-    # object of model = request.form["name_of_feature"]
-    # object of model = request.form["name_of_feature"]
-    # object of model = request.form["name_of_feature"]
-    # object of model = request.form["name_of_feature"]
+    # obtain form inputs from the dataframe for running the model
+    clean = float(request.form["cleanliness"])
+    host = float(90)
+    comms = float(5)
+    loc = float(5)
+    inst = float(request.form["instant"])
+    short = float(request.form["short"])
+    check = float(5)
+    value = float(request.form["review_score_value"])
+    accom = float(request.form["acomm"])
+    bedrooms = float(request.form["bedrooms"])
+    score = float(request.form["review_score_rating"])
+    buroughs = request.form["buroughs"]
+    room_type = request.form["room_type"]
 
+    if buroughs == "Bronx":
+        encoded_burough = [1,0,0,0,0]
+    elif buroughs == "Brooklyn":
+        encoded_burough = [0,1,0,0,0]
+    elif buroughs == "Manhattan":
+        encoded_burough = [0,0,1,0,0]
+    elif buroughs == "Queens":
+        encoded_burough = [0,0,0,1,0]
+    elif buroughs == "Staten Island":
+        encoded_burough = [0,0,0,0,1]
+
+    if room_type == "Entire home":
+        room = [1,0,0,0]
+    elif room_type == "Hotel room":
+        room = [0,1,0,0]
+    elif burough == "Private room":
+        room = [0,0,1,0]
+    elif burough == "Shared room":
+        room = [0,0,0,1]
+    
+    list_1 =  [clean, host, comms, loc, inst, short, check, value, accom, bedrooms, score]
+
+    features = list_1.extend(encoded_burough).extend(room)
+    # features = list_1 + encoded_burough + room
+
+    print(features)
     ## can use a different method based on the features we use
-    features = [float(x) for x in request.form.values()]
+    # features = [float(x) for x in request.form.values()]
+
     final_features = [np.array(features)]
 
     # use results to make prediction
