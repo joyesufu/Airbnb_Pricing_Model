@@ -19,3 +19,44 @@ New York City Airbnb data compiled using Inside Airbnb from
 http://insideairbnb.com/get-the-data/
 
 ## Table of Contents:
+
+1. [ Outlier Removal. ](#outlier)
+2. [ Flask Application. ](#flask)
+3. [ Airbnb Home Page/HTML. ](#airbnb_html)
+4. [ Scatter Plot. ](#scatter_plot)
+5. [ Box Plot. ](#box_plot)
+6. [ Heat Map. ](#heat_map)
+7. [ Conclusion. ](#conc)
+
+<a name="outlier"></a>
+### Outlier Removal
+
+After examining the data, we noticed that there was an extensive amount of outliers that affected that data, especially when it came to the average price of an Airbnb listing. These outliers were not included in the model because most of these price outliers are located in Manhattan, NY where Airbnb prices are significantly higher to the point only those in the top 3%-5% could afford it. Another noticeable outlier was the number of bedrooms for each Airbnb listing. Based on the scatter plot below, the price of an Airbnb decreases significantly after to bedrooms, which we thought was odd. For instance, the price drops drastically for an 11 bedroom Airbnb, but skyrockets to a price that is unaffordable to most people. Due to the fact that almost all Airbnbs will not have that many rooms, we deemed it necessary not to include anything over 10 bedrooms in the model.
+
+
+Dataframe(from Jupyter Notebook)
+
+![dataframe](./images/Outlier_Removal.PNG)
+
+
+Average Price and Bedrooms Graph
+
+![bedrooms](./images/AverageBedrooms_and_Bedrooms.PNG)
+
+<a name="flask"></a>
+### Flask Application
+
+<a name="airbnb_html"></a>
+### Airbnb Home Page
+
+<a name="scatter_plot"></a>
+### Scatter Plot
+
+<a name="box_plot"></a>
+### Box Plot
+
+<a name="heat_map"></a>
+### Heat Map
+
+<a name="conc"></a>
+### Conclusion
