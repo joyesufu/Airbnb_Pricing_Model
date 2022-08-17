@@ -30,10 +30,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">About</a>
+              <a class="nav-link active" aria-current="page" href="#about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Methodology</a>
+              <a class="nav-link" href="#method">Methodology</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#try">Try It!</a>
@@ -133,8 +133,8 @@
       <div class="container">
         <div class="row text-center">
           <h1>About the Project</h1>
-          <p>Using Machine Learning to Predict Rental Pricing</p>
-
+          <h4><em>Using Machine Learning to Predict Rental Pricing</em></h4>
+<p>We were challenged to create a machine learning model that would be able to create a prediction based on a given set of training data. We decided on AirBnb's expansive dataset to shape our model and drive our predictions.</p>
         </div>
 
       </div>
@@ -154,20 +154,132 @@
         </div>
         <div class="clearfix">
           <img src="../images/website.png" class="col-md-6 float-md-end mb-3 ms-md-3" alt="...">
-
+          <h3>
+            <a href="#data">Data Analysis with Visualizations</a>
+          </h3>
+          <h3>
+            <a href="#features">Features</a>
+          </h3>
+          <h3>
+            <a href="#model">Model</a>
+          </h3>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row text-center">
+          <h2> Data Analysis with Visualizations</h2>
+        </div>
+        <div id="data" class="clearfix">
+          <img src="../images/website.png" class="col-md-6 float-md-end mb-3 ms-md-3" alt="...">
           <p>
-            Add Info Here
+            In order to stabilize and enhance the predictive power of our model, we needed to identify any listings in the dataset that were sufficiently unrepresentative of the typical Airbnb listing in New York City. Incorporating a luxury
+          <p>
+            1-bedroom rental listed at $10,000/night in the outskirts of Staten Island, for example, could obscure some intuitive relationships between the location and size of a rental and its price. As such, we defined various criteria that could
+            be used to exclude unusual listings.
           </p>
-
-          <p>
-            Add Info Here
           </p>
-
           <p>
-            Add Info Here
+            First and foremost, we removed any listings that had less than 20 reviews. This was done for several reasons, but most importantly 1) to weed out new Airbnb rentals on the market that have not had the chance to recalibrate their price to
+            accurately reflect demand, and 2) to enhance the reliability of the ratings data.
           </p>
         </div>
+      </div>
+
+      <div class="container">
+        <div class="row text-center">
+        </div>
+        <div class="clearfix">
+          <img src="../images/website.png" class="col-md-6 float-md-end mb-3 ms-md-3" alt="...">
+          <p>
+            We also removed all listings with greater than 10 bedrooms. Listings with a minimum stay requirement of more than one year were similarly excluded.
+          </p>
+          <p>
+            We also considered the property type of the listing. Inside Airbnb distinguishes between property type and room type, with property type giving a more descriptive label to the listing. For example, a listing may have a room type of ‘hotel
+            room’ but the property type may describe the hotel room as belonging to a ‘boutique hotel’.
+          </p>
+          <p>
+            We summarized all the listings in New York City and removed from the analysis any listings that had a property type that showed up 5 or fewer
+            times in the dataset. This removed unusual listings with property types of ‘boat’, ‘cave’, and ‘room in a religious building’ for example. </p>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row text-center">
+        </div>
+        <div class="clearfix">
+          <img src="../images/website.png" class="col-md-6 float-md-end mb-3 ms-md-3" alt="...">
+          <p>
+            Finally, we wanted to account for listings with atypically high prices which may not be well-explained by the existing data. However, we recognized that what may be an atypically high price in one part of New York City may not be
+            unusually expensive in another part of the city.
+          </p>
+          <p>
+            As such, we chose to define “atypically expensive” as any rental priced at a daily dollar value of 50% of the maximum listing price in that rental’s borough. In other words, if the most expensive Airbnb rental in Manhattan is $10,000 per
+            night, then any rental greater than $5,000 per night would be designated as atypically expensive.
+          </p>
+          <p>
+            At the same time, if the most expensive Airbnb in Queens is $4,000 per night, then any listing greater than $2,000 per night would be designated as atypically expensive and removed from the model.
+          </p>
+        </div>
+
+        <div id="features" class="container">
+          <div class="row text-center">
+            <h1>Features Considered</h1>
+          </div>
+          <div class="col">
+            <h3>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item list">Borough</li>
+                <li class="list-group-item list">Number of bedrooms</li>
+                <li class="list-group-item list">Number of individuals accommodate</li>
+                <li class="list-group-item list">Room type (entire home, private bedroom, hotel room)</li>
+                <li class="list-group-item list">Rental is instantly bookable</li>
+                <li class="list-group-item list">Rental is a short-term rental (minimum stay of 30 days)</li>
+                <li class="list-group-item list">Cleanliness Rating</li>
+                <li class="list-group-item list">Location Rating</li>
+                <li class="list-group-item list">Value Rating</li>
+                <li class="list-group-item list">Overall rating</li>
+              </ul>
+            </h3>
+          </div>
+        </div>
+
+        <div id="model" class="container">
+          <div class="row text-center">
+            <h1>Model</h1>
+          </div>
+          <div class="row">
+            <p>
+              We employed two models to measure the relationship between a listing’s price and the aforementioned features. The first was a standard linear regression model, which attempts to fit a straight line through the data that minimizes the
+              differences between each data point and the line. One of the primary shortcomings of a linear regression model is that it is unable to capture non-linear relationships in the data. We also utilized a random forests regressor model.
+            </p>
+            <div class="col  align-self-center">
+              <div class="card">
+                <h5 class="card-header text-center">Linear Regression Model</h5>
+                <div class="card-body">
+                  <h5 class="card-title text-center"><strong>Train score:</strong> 0.4586770055163667</h5>
+                  <h5 class="card-title text-center"><strong>Test score:</strong> 0.42240377626206616</h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="col  align-self-center">
+              <div class="card">
+                <h5 class="card-header text-center">Random Forest Regressor Model</h5>
+                <div class="card-body">
+                  <h5 class="card-title text-center"><strong>Train score:</strong> 0.9289833832511434</h5>
+                  <h5 class="card-title text-center"><strong>Test score:</strong> 0.5143810013737884</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
+
+
+
+
+
 
     <!-- Try it!
 ================================================== -->
@@ -176,64 +288,65 @@
         <div class="row text-center">
           <h1>Try it!</h1>
           <!-- Buttons-->
-          <div class="form-group">
-            <form method="POST" action="/send" role="form" class = "form-group">
-                  <div class="form-group row">
-                    <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Borough
-                      <select id="buroughs" class="form-control" name="buroughs">
-                        <option value="Bronx">Bronx</option>
-                        <option value="Brooklyn">Brooklyn</option>
-                        <option value="Manhattan">Manhattan</option>
-                        <option value="Queens">Queens</option>
-                        <option value="Staten Island">Staten Island</option>
-                      </select>
-                    </button>
-                  </div>
-              <div class="form-group row">
-                <button class="text" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Review Count
-                  <select id="review_count_bin" class="form-control" name="reviews" type="text">
-                    <option value="No Reviews">No Reviews</option>
-                    <option value="Less than 10">Less than 10</option>
-                    <option value="Between 10 and 50">Between 10 and 50</option>
-                    <option value="Between 50 and 200">Between 50 and 200</option>
-                    <option value="200 or greater">200 or greater</option>
-                  </select>
-                </button>
-              </div>
-              <div class="form-group row">
-                <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Bed Rooms
-                  <select id="bedrooms" class="form-control" name="bedrooms" type="integer">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                  </select>
-                </button>
-              </div>
-              <div class="form-group row">
-                <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Room Type
-                  <select id="room_type" class="form-control" name="room_type" type="text">
-                    <option value="Entire home">Entire home</option>
-                    <option value="Hotel room">Hotel room</option>
-                    <option value="Private room">Private room</option>
-                    <option value="Shared room">Shared room</option>
-                  </select>
-                </button>
-              </div>
-              <div class="form-group row">
+          <form>
+            <div class="form-group">
+              <form method="POST" action="/send" role="form">
+                <div class="form-group row">
+                  <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Borough
+                    <select id="buroughs" class="form-control" name="buroughs">
+                      <option value="Bronx">Bronx</option>
+                      <option value="Brooklyn">Brooklyn</option>
+                      <option value="manhattan">Manhattan</option>
+                      <option value="queens">Queens</option>
+                      <option value="Staten Island">Staten Island</option>
+                    </select>
+                  </button>
+                </div>
+                <div class="form-group row">
+                  <button class="text" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Review Count
+                    <select id="review_count_bin" class="form-control" name="review_count_bin" type="text">
+                      <option value="none">No Reviews</option>
+                      <option value="less_10">Less than 10</option>
+                      <option value="10_50">Between 10 and 50</option>
+                      <option value="50_200">Between 50 and 200</option>
+                      <option value="200">200 or greater</option>
+                    </select>
+                  </button>
+                </div>
+                <div class="form-group row">
+                  <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Bed Rooms
+                    <select id="bedrooms" class="form-control" name="bedrooms" type="integer">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                    </select>
+                  </button>
+                </div>
+                <div class="form-group row">
+                  <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Room Type
+                    <select id="room_type" class="form-control" name="room_type" type="text">
+                      <option value="Entire home">Entire home</option>
+                      <option value="Hotel room">Hotel room</option>
+                      <option value="private room">Private room</option>
+                      <option value="Shared room">Shared room</option>
+                    </select>
+                  </button>
+                </div>
+                <div class="form-group row">
                   <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Accomodates
-                    <select id=accomm class="form-control" name="accomm" type="integer">
+                    <select id=accommodates class="form-control" name="accommodates" type="integer">
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -253,22 +366,22 @@
                     </select>
                   </button>
                 </div>
-              </div>
-              <div class="form-group row">
-                <button button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Instantly Bookable
-                  <select id=instant class="form-control" name="instant" type="text">
-                    <option value="1">Yes</option>
-                    <option value="0">No</option>
-                  </select>
-                </button>
-              </div>
+            </div>
+            <div class="form-group row">
+              <button button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Instantly Bookable
+                <select id=instant class="form-control" name="instant" type="text">
+                  <option value="y">Yes</option>
+                  <option value="n">No</option>
+                </select>
+              </button>
+            </div>
             <div class="form-group row">
               <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Short Term?
                 <select id="short" class="form-control" name="short" type="text">
-                  <option value="1">Yes</option>
-                  <option value="0">No</option>
+                  <option value="y">Yes</option>
+                  <option value="n">No</option>
                 </select>
               </button>
             </div>
@@ -286,7 +399,7 @@
               </button>
             </div>
             <div class="form-group row">
-              <!-- <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Location Score
                 <select id="location_score" class="form-control" name="location_score" type="float">
                   <option value="0">0</option>
@@ -296,7 +409,7 @@
                   <option value="4">4</option>
                   <option value="5">5</option>
                 </select>
-              </button> -->
+              </button>
             </div>
             <div class="form-group row">
               <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -325,6 +438,7 @@
               </button>
             </div>
             <input type="submit" value="Submit!" class="button">
+
           </form>
           <p>{{result}}</p>
 
