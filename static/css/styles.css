@@ -29,3 +29,15 @@
 .form-group{
   padding: 3px;
 }
+
+#model {
+padding-bottom: 100px;
+}
+
+#features {
+padding: 50px;
+}
+
+#about {
+  padding: 50px;
+}
