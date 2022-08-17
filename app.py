@@ -36,7 +36,7 @@ def send():
     short = float(request.form["short"])
     check = float(5)
     value = float(request.form["review_score_value"])
-    accom = float(request.form["acomm"])
+    accom = float(request.form["accomm"])
     bedrooms = float(request.form["bedrooms"])
     score = float(request.form["review_score_rating"])
     buroughs = request.form["buroughs"]
@@ -57,15 +57,15 @@ def send():
         room = [1,0,0,0]
     elif room_type == "Hotel room":
         room = [0,1,0,0]
-    elif burough == "Private room":
+    elif room_type == "Private room":
         room = [0,0,1,0]
-    elif burough == "Shared room":
+    elif room_type == "Shared room":
         room = [0,0,0,1]
     
     list_1 =  [clean, host, comms, loc, inst, short, check, value, accom, bedrooms, score]
 
-    features = list_1.extend(encoded_burough).extend(room)
-    # features = list_1 + encoded_burough + room
+    # features = list_1.extend(encoded_burough).extend(room)
+    features = list_1 + encoded_burough + room
 
     print(features)
     ## can use a different method based on the features we use
