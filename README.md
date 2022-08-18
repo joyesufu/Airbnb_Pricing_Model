@@ -76,7 +76,7 @@ The scatter plot below displays the relationship between Airbnb prices and the n
 
 The box plot created below is centered around each borough and the price of a single night from our data. Without much surprise, manhattan had the widest set of whiskers and total amount of outliers. However, the reasoning behind this visualization is to better understand the number of outliers for each borough. Because there were more than anticipated, there was an opportunity to optimize the model by cutting out the larger outliers. Furthermore, the box plot also offers insights towards the median price for each borough. The speculation around why so many outliers exist is due to the vast types of apartments, homes, and hotels within the greater New York area with all kinds of features. 
 
-![box_plot](./Images/Box_Plot.PNG)
+![box_plot](./images/Box_Plot.PNG)
 
 <a name="heat_map"></a>
 ### Heat Map
