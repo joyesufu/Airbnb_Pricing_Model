@@ -13,17 +13,14 @@
 
 
 #about {
-  background-color: #FF5A5F;
+  background-color:#FF5A5F;
 
 }
 
 #try {
   background-color: #FF5A5F;
+  padding: 50px;
 
-}
-
-.tryIt{
-  padding-bottom: 200px;
 }
 
 .form-group{
@@ -40,4 +37,20 @@ padding: 50px;
 
 #about {
   padding: 50px;
+}
+
+.btn {
+  background-color: #D3D3D3;
+  border-color: #D3D3D3;
+  color: black;
+}
+
+.btn:hover {
+  background-color: #00A699;
+  border-color: #00A699;
+}
+
+.top {
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
