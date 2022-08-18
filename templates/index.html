@@ -178,19 +178,31 @@
           <h2> Data Analysis and Visualizations</h2>
         </div>
         <br>
-        <div id="data" class="clearfix">
-          <img src="../static/images/Heat_Map.PNG" class="col-md-6 float-md-end mb-3 ms-md-3" alt="...">
+        <p>
+            Inside Airbnb had listings data for over 37,000 Airbnb rentals in New York City as of June 2022 and over 50 columns of data ranging from descriptive data about the host,
+            average ratings data per listings, descriptive information about the listing itself, and more. The challenge with a service like Airbnb is Airbnb hosts are not necessarily
+            industry experts on pricing or tourism or real estate. They may be renting out a room in their home for a little supplemental income and less inclined to charge market prices
+            for their space. Or they may be ambitiously trying to get top dollar for their Manhattan flat near Central Park, but over-charging in a competitive landscape. In other words, 
+            our target variable, listing price, is susceptible to a good degree of bias on the part of the listing owner or manager.
+          </p>
+          <figure>
+            <center>
+              <img src="../static/images/Heat_Map.PNG" alt="..." width="800px" height="auto">
+              <figcaption>Figure: Heat map of New York City listing prices.</figcaption>
+            </center>
+          </figure>
           <p>
             In order to stabilize and enhance the predictive power of our model, we needed to identify any listings in the dataset that were sufficiently unrepresentative of the typical Airbnb listing in New York City. Incorporating a luxury
-          <p>
             1-bedroom rental listed at $10,000/night in the outskirts of Staten Island, for example, could obscure some intuitive relationships between the location and size of a rental and its price. As such, we defined various criteria that could
             be used to exclude unusual listings.
-          </p>
           </p>
           <p>
             First and foremost, we removed any listings that had less than 20 reviews. This was done for several reasons, but most importantly 1) to weed out new Airbnb rentals on the market that have not had the chance to recalibrate their price to
             accurately reflect demand, and 2) to enhance the reliability of the ratings data.
-          </p>
+          </p>  
+          
+        <div id="data" class="clearfix">
+          
         </div>
       </div>
 
@@ -216,7 +228,6 @@
         <div class="row text-center">
         </div>
         <div class="clearfix">
-          <img src="../static/images/correlation_matrix.png" class="col-md-6 float-md-end mb-3 ms-md-3" alt="..." width="auto" height="auto">
           <p>
             Finally, we wanted to account for listings with atypically high prices which may not be well-explained by the existing data. However, we recognized that what may be an atypically high price in one part of New York City may not be
             unusually expensive in another part of the city.
@@ -237,6 +248,7 @@
         </div>
         <div class="col">
           <h4>
+            <img src="../static/images/correlation_matrix.png" class="col-md-6 float-md-end mb-3 ms-md-3" alt="..." width="auto" height="auto">
             <ul class="list-group list-group-flush">
               <li class="list-group-item list"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-heart-fill" viewBox="0 0 16 16">
   <path d="M7.293 1.5a1 1 0 0 1 1.414 0L11 3.793V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v3.293l2.354 2.353a.5.5 0 0 1-.708.707L8 2.207 1.354 8.853a.5.5 0 1 1-.708-.707L7.293 1.5Z"/>
@@ -318,6 +330,21 @@
           <p>The random forest model had a significantly higher R-squared under the training data than the linear model, although only a modestly stronger R-squared under the test data. In other words, overall
             the random forest model was better at explaining the total variance among the features. 
           </p>
+          <p>
+            The scatterplots below show the true price (gray) and predicted price (pink) under each model for ten listings in the 'test' dataset. The random forest model generally made better predictions.
+          </p>
+          <div class="col  align-self-center">
+            <center>
+              <img src="../static/images/scatter_linear.png" alt="..." width="500px" height="auto">
+            </center>
+            
+          </div>
+          <div class="col  align-self-center">
+            <center>
+              <img src="../static/images/scatter_rfr.png" alt="..." width="500px" height="auto">
+            </center>
+            
+          </div>
         </div>
       </div>
       </div>
